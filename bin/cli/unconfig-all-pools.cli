@@ -1,0 +1,7 @@
+#-*- coding: utf-8-unix -*-
+set pool_name=${pool_name}
+set baseNode=/subsystem=resource-adapters/resource-adapter=casual-jca
+set connectionDefinitionNode=$baseNode/connection-definitions=$pool_name
+$connectionDefinitionNode:remove
+
+

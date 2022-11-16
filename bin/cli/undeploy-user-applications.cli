@@ -1,0 +1,4 @@
+#-*- coding: utf-8-unix -*-
+set TEST_APP_HOME=${env.TEST_APP_HOME}
+
+undeploy --name=casual-java-testapp.war --force $TEST_APP_HOME/test-app/build/libs/casual-java-testapp.war

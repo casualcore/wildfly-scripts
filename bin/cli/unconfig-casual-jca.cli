@@ -1,0 +1,5 @@
+#-*- coding: utf-8-unix -*-
+
+/subsystem=resource-adapters/resource-adapter=casual-jca:remove
+/subsystem=ee:list-remove(name="global-modules",value="se.laz.casual")
+module remove --name=se.laz.casual

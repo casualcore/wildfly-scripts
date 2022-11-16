@@ -1,0 +1,21 @@
+# Installerar casual resource-adapter
+
+echo Creating Casual-Resource-Adapter
+# Local variables
+
+
+set baseNode=/subsystem=resource-adapters/resource-adapter=casual-jca
+$baseNode:add(archive=casual-jca.ear#casual-jca.rar,transaction-support=XATransaction)
+set connectionDefinitionNode=$baseNode/connection-definitions=casual-pool
+$connectionDefinitionNode:add(\
+    class-name=se.laz.casual.jca.CasualManagedConnectionFactory,\
+    jndi-name=eis/casualConnectionFactory,\
+    min-pool-size=5, initial-pool-size=5, max-pool-size=5,\
+    no-recovery=true,\
+    enabled=true)
+$connectionDefinitionNode/config-properties=PortNumber:add(value=7771)
+$connectionDefinitionNode/config-properties=HostName:add(value=${jboss.bind.address:127.0.0.1})
+
+ 
+ 
+ 

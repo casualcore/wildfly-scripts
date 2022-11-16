@@ -1,0 +1,5 @@
+#-*- coding: utf-8-unix -*-
+set CASUAL_JCA_HOME=${env.CASUAL_JCA_HOME}
+set CASUAL_VERSION=${env.CASUAL_VERSION}
+
+undeploy --name=casual-inbound-startup-trigger-app.ear --force $CASUAL_JCA_HOME/casual/casual-inbound-startup-trigger-app/build/libs/casual-inbound-startup-trigger-app-$CASUAL_VERSION.ear

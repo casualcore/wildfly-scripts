@@ -1,0 +1,14 @@
+#-*- coding: utf-8-unix -*-
+
+set NAMESPACE=${env.NAMESPACE}
+set LOGLEVEL=${env.LOGLEVEL}
+
+try
+ set baseNode=/subsystem=logging/logger=$NAMESPACE:read-resource
+ echo 'changing log level for: ' $NAMESPACE ' to: ' $LOGLEVEL
+ /subsystem=logging/logger=$NAMESPACE:change-log-level(level=$LOGLEVEL)
+catch
+ echo 'no previous log level for: ' $NAMESPACE ' adding with loglevel: ' $LOGLEVEL
+ /subsystem=logging/logger=$NAMESPACE/:add(category=$NAMESPACE,level=$LOGLEVEL,use-parent-handlers=true)
+finally
+end-try
