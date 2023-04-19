@@ -1,6 +1,6 @@
 #-*- coding: utf-8-unix -*-
 
 set CASUAL_TEST_VERSION=${env.CASUAL_TEST_VERSION}
-set CASUAL_JCA_HOME=${env.CASUAL_JCA_HOME}
+set CASUAL_TEST_HOME=${env.CASUAL_TEST_HOME}
 
-deploy --name=casual-test-app.war --force $CASUAL_JCA_HOME/casual/casual-test-app/build/libs/casual-test-app-$CASUAL_TEST_VERSION.war
+deploy --name=casual-test-app.war --force $CASUAL_TEST_HOME/casual/casual-test-app/build/libs/casual-test-app-$CASUAL_TEST_VERSION.war

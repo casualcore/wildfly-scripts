@@ -1,10 +1,11 @@
 #-*- coding: utf-8-unix -*-
 
 set CASUAL_VERSION=${env.CASUAL_VERSION}
-set CASUAL_JCA_HOME=${env.CASUAL_JCA_HOME}
+set CASUAL_ARTIFACTS_HOME=${env.CASUAL_ARTIFACTS_HOME}
+set GSON_VERSION=${env.GSON_VERSION}
 
 module add --name=se.laz.casual \
-           --resources=$CASUAL_JCA_HOME/casual/casual-inbound-handler-api/build/libs/casual-inbound-handler-api-$CASUAL_VERSION.jar:$CASUAL_JCA_HOME/casual/casual-fielded-annotations/build/libs/casual-fielded-annotations-$CASUAL_VERSION.jar:$CASUAL_JCA_HOME/casual/casual-service-discovery-extension/build/libs/casual-service-discovery-extension-$CASUAL_VERSION.jar:$CASUAL_JCA_HOME/casual/casual-api/build/libs/casual-api-$CASUAL_VERSION.jar:~/libs/gson-2.8.6.jar \
+           --resources=$CASUAL_ARTIFACTS_HOME/lib/casual-inbound-handler-api-$CASUAL_VERSION.jar:$CASUAL_ARTIFACTS_HOME/lib/casual-fielded-annotations-$CASUAL_VERSION.jar:$CASUAL_ARTIFACTS_HOME/lib/casual-service-discovery-extension-$CASUAL_VERSION.jar:$CASUAL_ARTIFACTS_HOME/lib/casual-api-$CASUAL_VERSION.jar:$CASUAL_ARTIFACTS_HOME/lib/gson-$GSON_VERSION.jar \
            --dependencies=javaee.api,sun.jdk
 
 /subsystem=ee:list-add(name=global-modules, value={name=se.laz.casual})

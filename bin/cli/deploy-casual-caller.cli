@@ -1,5 +1,5 @@
 #-*- coding: utf-8-unix -*-
-set CASUAL_JCA_HOME=${env.CASUAL_JCA_HOME}
+set CASUAL_ARTIFACTS_HOME=${env.CASUAL_ARTIFACTS_HOME}
 set CASUAL_CALLER_VERSION=${env.CASUAL_CALLER_VERSION}
 
-deploy --force $CASUAL_JCA_HOME/casual/casual-caller-app/build/libs/casual-caller-app-$CASUAL_CALLER_VERSION.ear
+deploy --force $CASUAL_ARTIFACTS_HOME/bin/casual-caller-app-$CASUAL_CALLER_VERSION.ear
