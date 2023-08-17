@@ -2,6 +2,7 @@
 
 set CASUAL_VERSION=${env.CASUAL_VERSION}
 set CASUAL_ARTIFACTS_HOME=${env.CASUAL_ARTIFACTS_HOME}
+set CASUAL_INBOUND_PORT=${env.CASUAL_INBOUND_PORT}
 set GSON_VERSION=${env.GSON_VERSION}
 
 module add --name=se.laz.casual \
@@ -13,3 +14,4 @@ module add --name=se.laz.casual \
 # configure casual RA
 set baseNode=/subsystem=resource-adapters/resource-adapter=casual-jca
 $baseNode:add(archive=casual-jca-app-$CASUAL_VERSION.ear#casual-jca.rar,transaction-support=XATransaction)
+$baseNode/config-properties=InboundServerPort:add(value=$CASUAL_INBOUND_PORT)
